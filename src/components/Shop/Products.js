@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 const Products = (props) => {
   const items = useSelector((state) => state.shop.items);
 
-  console.log(items);
   return (
     <section className={classes.products}>
       <h2>Buy your favorite products</h2>

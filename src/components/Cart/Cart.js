@@ -11,9 +11,16 @@ const Cart = (props) => {
     <Card className={classes.cart}>
       <h2>Your Shopping Cart</h2>
       <ul>
-        <CartItem
-          item={{ title: "Test Item", quantity: 3, total: 18, price: 6 }}
-        />
+        {items.map((cur) => (
+          <CartItem
+            item={{
+              title: cur.title,
+              quantity: cur.quantity,
+              total: cur.total,
+              price: cur.price,
+            }}
+          />
+        ))}
       </ul>
     </Card>
   );
