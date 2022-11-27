@@ -1,7 +1,8 @@
 .item {
   margin: 1rem 0;
-  background-color: #575757;
+  background-color: #eee;
   padding: 1rem;
+  border-radius: 6px;
 }
 
 .item h3 {
@@ -45,14 +46,14 @@
 
 .actions button {
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid #313131;
   margin-left: 0.5rem;
   padding: 0.15rem 1rem;
-  color: white;
+  color: #313131;
 }
 
 .actions button:hover,
 .actions button:active {
-  background-color: #4b4b4b;
+  background-color: #313131;
   color: white;
 }
