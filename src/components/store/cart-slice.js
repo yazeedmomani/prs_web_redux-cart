@@ -4,6 +4,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: {
     items: [],
+    isRendered: false,
   },
   reducers: {
     addToCart(state, action) {
@@ -41,6 +42,14 @@ const cartSlice = createSlice({
       } else {
         state.items = state.items.filter((_, i) => i !== itemIndex);
       }
+    },
+
+    render(state) {
+      state.isRendered = true;
+    },
+
+    unrender(state) {
+      state.isRendered = false;
     },
   },
 });

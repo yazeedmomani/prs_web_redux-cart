@@ -1,7 +1,11 @@
 .cart {
+  position: absolute;
   max-width: 30rem;
   background-color: #313131;
   color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .cart h2 {
