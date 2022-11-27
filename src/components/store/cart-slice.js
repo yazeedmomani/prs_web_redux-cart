@@ -8,7 +8,21 @@ const cartSlice = createSlice({
   reducers: {
     addToCart(state, action) {
       // action.payload = one item object
-      state.items.push(action.payload);
+      if (state.items.find((cur) => cur.id === action.payload.id)) {
+        const item = state.items.filter((cur) => cur.id === action.payload.id);
+        const itemIndex = state.items.indexOf(...item);
+        state.items[itemIndex].quantity++;
+        state.items[itemIndex].total += state.items[itemIndex].price;
+      } else {
+        const newItem = {
+          title: action.payload.title,
+          price: action.payload.price,
+          id: action.payload.id,
+          quantity: 1,
+          total: action.payload.price,
+        };
+        state.items.push(newItem);
+      }
     },
   },
 });

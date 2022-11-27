@@ -11,7 +11,13 @@ const ProductItem = (props) => {
   const clickHandler = function (e) {
     e.preventDefault();
 
-    dispatcher(cartActions.addToCart("TODO"));
+    dispatcher(
+      cartActions.addToCart({
+        price,
+        title,
+        id: props.id,
+      })
+    );
   };
 
   return (
