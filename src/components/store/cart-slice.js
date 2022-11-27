@@ -5,7 +5,6 @@ const cartSlice = createSlice({
   initialState: {
     items: [],
     isRendered: false,
-    isEmpty: true,
   },
   reducers: {
     addToCart(state, action) {
@@ -51,14 +50,6 @@ const cartSlice = createSlice({
 
     unrender(state) {
       state.isRendered = false;
-    },
-
-    isEmpty(state) {
-      if (state.items.length === 0) {
-        state.isEmpty = true;
-      } else {
-        state.isEmpty = false;
-      }
     },
   },
 });

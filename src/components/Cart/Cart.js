@@ -9,11 +9,9 @@ import { cartActions } from "../store/cart-slice";
 
 const Cart = (props) => {
   const items = useSelector((state) => state.cart.items);
-  const isEmpty = useSelector((state) => state.cart.isEmpty);
+  const isEmpty = items.length === 0 ? true : false;
 
   const dispatcher = useDispatch();
-  const isEmptyDispatcher = useDispatch();
-  isEmptyDispatcher(cartActions.isEmpty());
 
   const clickHandler = function (e) {
     e.preventDefault();
