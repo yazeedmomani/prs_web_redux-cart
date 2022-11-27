@@ -9,8 +9,11 @@ import { cartActions } from "../store/cart-slice";
 
 const Cart = (props) => {
   const items = useSelector((state) => state.cart.items);
+  const isEmpty = useSelector((state) => state.cart.isEmpty);
 
   const dispatcher = useDispatch();
+  const isEmptyDispatcher = useDispatch();
+  isEmptyDispatcher(cartActions.isEmpty());
 
   const clickHandler = function (e) {
     e.preventDefault();
@@ -21,7 +24,7 @@ const Cart = (props) => {
     <Fragment>
       <Backdrop onClick={clickHandler} />
       <Card className={classes.cart}>
-        <h2>Your Shopping Cart</h2>
+        {isEmpty ? <h2>No items found</h2> : <h2>Your Shopping Cart</h2>}
         <ul>
           {items.map((cur) => (
             <CartItem
